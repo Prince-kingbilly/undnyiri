@@ -117,7 +117,7 @@ function Department() {
                   <td>
                     <button
                       onClick={() => handleEdit(item)}
-                      className="bg-gray-600 px-2 py-1 text-white rounded"
+                      className="bg-gray-700 px-2 py-1 text-white rounded"
                     >
                       update one
                     </button>
