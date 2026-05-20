@@ -125,7 +125,7 @@ function Salary() {
 
           <button
             type="submit"
-            className="bg-blue-500 text-white p-2 rounded hover:bg-blue-600"
+            className="bg-orange-500 text-white p-2 rounded hover:bg-blue-600"
           >
             {editId ? "Update Salary" : "Add Salary"}
           </button>
@@ -155,14 +155,14 @@ function Salary() {
                   <td className="border p-2 flex gap-2">
                     <button
                       onClick={() => handleEdit(item)}
-                      className="bg-yellow-500 px-3 py-1 text-white rounded"
+                      className="bg-gray-700 px-3 py-1 text-white rounded"
                     >
-                      Edit
+                      update one
                     </button>
 
                     <button
                       onClick={() => handleDelete(item._id)}
-                      className="bg-red-500 px-3 py-1 text-white rounded"
+                      className="bg-orange-500 px-3 py-1 text-white rounded"
                     >
                       Delete
                     </button>

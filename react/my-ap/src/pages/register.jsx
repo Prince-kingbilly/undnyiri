@@ -1,34 +1,69 @@
+// import { useState } from "react";
+// import {FaUsers,FaUser,FaEnvelope,FaLock,FaUserPlus} from "react-icons/fa"
+// import { Link,useNavigate } from "react-router-dom";
+// import API from "../api/axios.js";
+// function Register(){
+// const [username,setUsername]=useState('')
+// const [email,setEmail]=useState('')
+// const [password,setPassword]=useState('')
+// const [errorMessage,setErrorMessage]=useState('')
+// const navigate=useNavigate()
+// //e prvede dataolls where action happen like click,elememt ,time happen
+// const handleCreate=async(e)=>{
+//     e.preventDefault()
+
+//     try{
+//         const res=API.post("/user/register",{username,email,password});
+//        if(res){
+//          alert((await res).data.msg);//wait message from backend
+//         setErrorMessage('');
+//         navigate("/login")
+//        }
+//        else{
+//         alert("user failed to be inserted")
+//        }
+//     }
+//     catch(err){
+// console.log(err)
+// setErrorMessage(err.response?.data?.msg);
+
+//     }
+// }
+
 import { useState } from "react";
+import API from "../api/axios";
 import {FaUsers,FaUser,FaEnvelope,FaLock,FaUserPlus} from "react-icons/fa"
 import { Link,useNavigate } from "react-router-dom";
-import API from "../api/axios.js";
 function Register(){
-const [username,setUsername]=useState('')
-const [email,setEmail]=useState('')
-const [password,setPassword]=useState('')
-const [errorMessage,setErrorMessage]=useState('')
-const navigate=useNavigate()
-//e prvede dataolls where action happen like click,elememt ,time happen
-const handleCreate=async(e)=>{
-    e.preventDefault()
+const[username,setUsername]=useState('');
+const[email,setEmail]=useState('');
+const[password,setPassword]=useState('');
+const[errorMessage,setErrorMessage]=useState('');
+const navigate=useNavigate();
 
-    try{
-        const res=API.post("/user/register",{username,email,password});
-       if(res){
-         alert((await res).data.msg);//wait message from backend
-        setErrorMessage('');
-        navigate("/login")
-       }
-       else{
-        alert("user failed to be inserted")
-       }
-    }
-    catch(err){
-console.log(err)
-setErrorMessage(err.response?.data?.msg);
+const reg=async(e)=>{
+e.preventDefault()
+try{
+const res=API.post("/user/register",{username,email,password})
+if(res){
+alert((await res).data.msg)
+setErrorMessage('')
+navigate("/login")
 
-    }
+
+}else{
+  alert("app is fail")
 }
+}catch(err){
+  console.log(err)
+}
+
+}
+
+
+
+
+
 
     return(
 <>
@@ -42,7 +77,7 @@ setErrorMessage(err.response?.data?.msg);
         <FaUsers />
       </h2>
 
-      <form onSubmit={handleCreate} className="space-y-5">
+      <form onSubmit={reg} className="space-y-5">
 
         {/* Username */}
         <div className="space-y-1">

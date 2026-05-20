@@ -17,7 +17,7 @@ export default function DashboardLayout({ children }) {
   const location = useLocation();
 
   return (
-    <div className="h-screen bg-gray-100 overflow-hidden">
+    <div className="h-screen bg-gray-200 overflow-hidden">
       {/* Mobile top bar (hamburger hidden because sidebar is constant) */}
       <div className="md:hidden sticky top-0 z-40 bg-gray-900 text-white">
         <div className="flex items-center gap-2 font-semibold px-4 py-3">

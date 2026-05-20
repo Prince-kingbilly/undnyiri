@@ -88,44 +88,16 @@ function Department() {
           style={{ marginBottom: "20px" }}
           className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6"
         >
-          <input
-            name="departimentCode"
-            placeholder="Code"
-            value={form.departimentCode}
-            onChange={handleChange}
-            className="border p-2 rounded"
-          />
-          <input
-            name="departimentName"
-            placeholder="Name"
-            value={form.departimentName}
-            onChange={handleChange}
-            className="border p-2 rounded"
-          />
-          <input
-            name="grossSlalary"
-            placeholder="Salary"
-            value={form.grossSlalary}
-            onChange={handleChange}
-            className="border p-2 rounded"
-          />
+          <input name="departimentCode" placeholder="Code" value={form.departimentCode} onChange={handleChange} className="border p-2 rounded"/>
+          <input name="departimentName" placeholder="Name" value={form.departimentName} onChange={handleChange}className="border p-2 rounded"/>
+          <input name="grossSlalary" placeholder="Salary" value={form.grossSlalary} onChange={handleChange} className="border p-2 rounded"/>
 
-          <button
-            type="submit"
-            className="bg-blue-500 text-white p-2 rounded hover:bg-blue-600"
-          >
-            {editId ? "Update" : "Add"}
-          </button>
+          <button type="submit" className="bg-orange-500 text-white p-2 rounded hover:bg-blue-600">{editId ? "Update" : "Add"}</button>
         </form>
 
         {/* TABLE */}
         <div className="overflow-x-auto">
-          <table
-            border="2"
-            cellPadding="10"
-            width="100%"
-            className="w-full border border-gray-300"
-          >
+          <table border="2" cellPadding="10" width="100%" className="w-full border border-gray-300">
             <thead>
               <tr>
                 <th className="border p-2">Code</th>
@@ -145,14 +117,14 @@ function Department() {
                   <td>
                     <button
                       onClick={() => handleEdit(item)}
-                      className="bg-yellow-500 px-3 py-1 text-white rounded"
+                      className="bg-gray-600 px-2 py-1 text-white rounded"
                     >
-                      Edit
+                      update one
                     </button>
-                    <button
-                      onClick={() => handleDelete(item._id)}
-                      className="bg-red-500 px-3 py-1 text-white rounded"
-                    >
+
+&
+
+                    <button onClick={() => handleDelete(item._id)} className="bg-orange-500 px-3 py-1 text-white rounded">
                       Delete
                     </button>
                   </td>

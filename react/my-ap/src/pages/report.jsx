@@ -125,7 +125,7 @@ function Report() {
 
   return (
     <DashboardLayout>
-      <div className="bg-white p-4 md:p-6 rounded shadow-md min-w-0">
+      <div className="bg-blue p-4 md:p-6 rounded shadow-md min-w-0">
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-6">
           <h1 className="text-2xl md:text-3xl font-bold text-gray-800">
             Department Report
@@ -152,13 +152,13 @@ function Report() {
           </div>
         </div>
 
-        <div className="bg-gray-50 p-4 rounded shadow mb-6">
+        <div className="bg-orange-500 p-4 rounded shadow mb-6">
           <div className="text-sm text-gray-600">
             CRUD Data shown:
           </div>
           <div className="mt-1 flex flex-wrap gap-3 text-sm">
-            <span className="font-semibold">Departments:</span> {totalDepartments}
-            <span className="font-semibold">Salaries (CRUD1):</span> {totalSalaries}
+            <span className="font-semibold text-gray-600">Departments:</span> {totalDepartments}
+            <span className="font-semibold text-gray-600">Salaries (CRUD1):</span> {totalSalaries}
           </div>
         </div>
 
@@ -233,7 +233,7 @@ function Report() {
         <div className="mt-6 text-right">
           <button
             onClick={handlePrint}
-            className="bg-blue-600 text-white px-4 py-2 rounded"
+            className="bg-orange-500 text-white px-4 py-2 rounded"
           >
             Print Report
           </button>
