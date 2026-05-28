@@ -63,7 +63,7 @@ function Dashboard() {
   }));
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-200 p-4 md:p-8">
+    <div className="min-h-screen bg-gray-300 from-slate-50 to-slate-200 p-4 md:p-8">
       <div className="max-w-7xl mx-auto">
         <h1 className="text-3xl font-bold text-gray-800 mb-6">Dashboard</h1>
 
