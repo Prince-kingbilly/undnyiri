@@ -1,0 +1,21 @@
+import jwt from "jsonwebtoken";
+import showouu from "../model/user.js";
+
+export const authMiddleware = async (req, res, next) => {
+    try {
+        const authHeader = req.headers.authorization;
+        if (!authHeader || !authHeader.startsWith("Bearer ")) {
+            return res.status(401).json({ msg: "No token provided" });
+        }
+        const token = authHeader.split(" ")[1];
+        const decoded = jwt.verify(token, process.env.SESSION_SECRET);
+        const user = await showouu.findById(decoded.id).select("-password");
+        if (!user) {
+            return res.status(401).json({ msg: "User not found" });
+        }
+        req.user = user;
+        next();
+    } catch (err) {
+        return res.status(401).json({ msg: "Invalid token" });
+    }
+};
